@@ -1,0 +1,9 @@
+CREATE TABLE sessaovotacao (
+    id BIGSERIAL PRIMARY KEY UNIQUE NOT NULL,
+    status TEXT NOT NULL,
+    tempo_votacao INTERVAL NOT NULL,
+    pauta_id BIGINT NOT NULL UNIQUE REFERENCES pauta(id),
+    inicio TIMESTAMP NOT NULL,
+    fim TIMESTAMP NOT NULL,
+    aberta BOOLEAN NOT NULL DEFAULT TRUE
+);
