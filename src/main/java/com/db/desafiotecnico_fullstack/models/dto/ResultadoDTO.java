@@ -1,39 +1,30 @@
 package com.db.desafiotecnico_fullstack.models.dto;
 
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.NoArgsConstructor;
 
 import java.util.UUID;
 
 @Data
+@NoArgsConstructor  // Construtor sem argumentos
 public class ResultadoDTO {
-
     private UUID pautaId;
-    private String tituloPauta;
-    private Long votosSim;
-    private Long votosNao;
-    private Long totalVotos;
+    private String titulo;
+    private long votosSim;
+    private long votosNao;
+    private long totalVotos;
 
-
-    //construtor sem parametros
-    public ResultadoDTO() {}
-
-    //constructor
-
-    public ResultadoDTO(UUID pautaId, String tituloPauta, Long votosSim, Long votosNao, Long totalVotos) {
+    // Construtor explícito
+    public ResultadoDTO(UUID pautaId, String titulo, long votosSim, long votosNao, long totalVotos) {
         this.pautaId = pautaId;
-        this.tituloPauta = tituloPauta;
+        this.titulo = titulo;
         this.votosSim = votosSim;
         this.votosNao = votosNao;
         this.totalVotos = totalVotos;
     }
 
-
     //getters e setters
-
 
     public UUID getPautaId() {
         return pautaId;
@@ -43,35 +34,35 @@ public class ResultadoDTO {
         this.pautaId = pautaId;
     }
 
-    public String getTituloPauta() {
-        return tituloPauta;
+    public String getTitulo() {
+        return titulo;
     }
 
-    public void setTituloPauta(String tituloPauta) {
-        this.tituloPauta = tituloPauta;
+    public void setTitulo(String titulo) {
+        this.titulo = titulo;
     }
 
-    public Long getVotosSim() {
+    public long getVotosSim() {
         return votosSim;
     }
 
-    public void setVotosSim(Long votosSim) {
+    public void setVotosSim(long votosSim) {
         this.votosSim = votosSim;
     }
 
-    public Long getVotosNao() {
+    public long getVotosNao() {
         return votosNao;
     }
 
-    public void setVotosNao(Long votosNao) {
+    public void setVotosNao(long votosNao) {
         this.votosNao = votosNao;
     }
 
-    public Long getTotalVotos() {
+    public long getTotalVotos() {
         return totalVotos;
     }
 
-    public void setTotalVotos(Long totalVotos) {
+    public void setTotalVotos(long totalVotos) {
         this.totalVotos = totalVotos;
     }
 }

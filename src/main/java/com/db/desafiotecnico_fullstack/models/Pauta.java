@@ -11,7 +11,6 @@ import java.util.UUID;
 
 @Table(name = "pauta")
 @Entity(name = "pauta")
-@EqualsAndHashCode(of = "id")
 public class Pauta {
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)

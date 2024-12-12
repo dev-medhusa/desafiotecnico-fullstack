@@ -4,14 +4,14 @@ import jakarta.persistence.*;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
+import java.util.UUID;
+
+import org.hibernate.annotations.Type;
 
 import java.util.UUID;
 
 @Table(name = "associado")
-@Entity(name = "associado")
-@EqualsAndHashCode(of = "id")
-@Getter
-@Setter
+@Entity
 public class Associado {
 
     @Id @GeneratedValue(strategy = GenerationType.UUID)
@@ -23,4 +23,29 @@ public class Associado {
     @Column(nullable = false, unique = true, length = 11)
     private String cpf;
 
+    //getters e setters
+
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
 }

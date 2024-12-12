@@ -1,9 +1,7 @@
-CREATE TABLE sessaovotacao (
-    id BIGSERIAL PRIMARY KEY UNIQUE NOT NULL,
-    status TEXT NOT NULL,
-    tempo_votacao INTERVAL NOT NULL,
-    pauta_id BIGINT NOT NULL UNIQUE REFERENCES pauta(id),
-    inicio TIMESTAMP NOT NULL,
-    fim TIMESTAMP NOT NULL,
-    aberta BOOLEAN NOT NULL DEFAULT TRUE
+CREATE TABLE IF NOT EXISTS sessao_votacao (
+    id UUID DEFAULT uuid_generate_v4() PRIMARY KEY,
+    pauta_id UUID NOT NULL,
+    data_inicio TIMESTAMP NOT NULL,
+    data_fim TIMESTAMP NOT NULL,
+    FOREIGN KEY (pauta_id) REFERENCES pauta(id)
 );

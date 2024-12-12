@@ -10,7 +10,6 @@ import java.util.UUID;
 
 @Table(name = "sessaovotacao")
 @Entity(name = "sessaovotacao")
-@EqualsAndHashCode(of = "id")
 @Getter
 @Setter
 public class SessaoVotacao {

@@ -1,37 +1,18 @@
 package com.db.desafiotecnico_fullstack.models.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Data;
-import lombok.Getter;
-import lombok.Setter;
-
+import lombok.NoArgsConstructor;
 import java.util.UUID;
 
 @Data
-@AllArgsConstructor
+@NoArgsConstructor
 public class VotoDTO {
-    private UUID id;
-    private long associadoId;
     private UUID pautaId;
+    private UUID associadoId;
     private String voto;
 
     //getters e setters
 
-    public UUID getId() {
-        return id;
-    }
-
-    public void setId(UUID id) {
-        this.id = id;
-    }
-
-    public long getAssociadoId() {
-        return associadoId;
-    }
-
-    public void setAssociadoId(long associadoId) {
-        this.associadoId = associadoId;
-    }
 
     public UUID getPautaId() {
         return pautaId;
@@ -39,6 +20,14 @@ public class VotoDTO {
 
     public void setPautaId(UUID pautaId) {
         this.pautaId = pautaId;
+    }
+
+    public UUID getAssociadoId() {
+        return associadoId;
+    }
+
+    public void setAssociadoId(UUID associadoId) {
+        this.associadoId = associadoId;
     }
 
     public String getVoto() {

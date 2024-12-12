@@ -3,15 +3,16 @@ package com.db.desafiotecnico_fullstack.models;
 
 import com.db.desafiotecnico_fullstack.models.enuns.EscolhaVoto;
 import jakarta.persistence.*;
+import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.Setter;
 
 import java.util.UUID;
 
+@Data
 @Table(name = "voto")
-@Entity(name = "voto")
-@EqualsAndHashCode(of = "id")
+@Entity
 public class Voto {
 
     @Id
@@ -22,8 +23,7 @@ public class Voto {
     @JoinColumn(name = "pauta_id", nullable = false)
     private Pauta pauta;
 
-    @Column(nullable = false)
-    private Long associadoId;
+    private UUID associadoId;
 
     @Enumerated(EnumType.STRING)
     private EscolhaVoto voto; //Sim ou nao
@@ -46,11 +46,11 @@ public class Voto {
         this.pauta = pauta;
     }
 
-    public Long getAssociadoId() {
+    public UUID getAssociadoId() {
         return associadoId;
     }
 
-    public void setAssociadoId(Long associadoId) {
+    public void setAssociadoId(UUID associadoId) {
         this.associadoId = associadoId;
     }
 
@@ -62,3 +62,4 @@ public class Voto {
         this.voto = voto;
     }
 }
+

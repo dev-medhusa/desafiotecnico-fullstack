@@ -14,7 +14,7 @@ import java.util.UUID;
 @AllArgsConstructor
 public class SessaoVotacaoDTO {
     private UUID id;
-    private Long pautaId;
+    private UUID pautaId;
     private LocalDateTime inicio;
     private LocalDateTime fim;
     private boolean aberta;
